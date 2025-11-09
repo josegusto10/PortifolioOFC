@@ -1,0 +1,191 @@
+/* ======= ESTILOS DA PÁGINA projetos ======= */
+
+.projetos {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+  overflow: hidden;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.projetos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.05), transparent 70%),
+              linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.6));
+  z-index: 0;
+}
+
+/* ===== JANELAS ===== */
+.projetos .window {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  width: 180px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+/* Aba com os 3 pontinhos */
+.projetos .window::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 36px;
+  height: 10px;
+  background:
+    radial-gradient(circle, #ff5f56 25%, transparent 26%) 0 0,
+    radial-gradient(circle, #ffbd2e 25%, transparent 26%) 12px 0,
+    radial-gradient(circle, #27c93f 25%, transparent 26%) 24px 0;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+/* Ícones */
+.projetos .window i {
+  width: 80px;
+  height: 80px;
+  color: #d4af37; 
+  opacity: 0.9;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.projetos .window:hover i {
+  transform: scale(1.15);
+  color: #fff;
+}
+
+.projetos .window:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Animações de flutuação ===== */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-0.6deg); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(0.3deg); }
+}
+@keyframes float4 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-0.4deg); }
+}
+@keyframes float5 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(0.5deg); }
+}
+
+/* ===== POSICIONAMENTO ===== */
+.projetos .window1 { top: 12%; left: 10%; animation: float1 6s ease-in-out infinite; }
+.projetos .window2 { top: 28%; right: 12%; animation: float2 7s ease-in-out infinite; }
+.projetos .window3 { bottom: 25%; left: 18%; animation: float3 8s ease-in-out infinite; }
+.projetos .window4 { bottom: 10%; right: 8%; animation: float4 9s ease-in-out infinite; }
+.projetos .window5 { top: 50%; left: 50%; transform: translate(-50%, -50%); animation: float5 10s ease-in-out infinite; }
+
+
+/* NAVBAR (geral para todas as páginas) */
+nav {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 25px;
+  padding: 8px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #001122;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav .user-icon {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+}
+/* ===== ÍCONE FLUTUANTE DO GITHUB ===== */
+
+.github-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(0, 191, 255, 0.1);
+  border: 1px solid rgba(0, 191, 255, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00bfff;
+  font-size: 1.8rem;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: float-github 4s ease-in-out infinite;
+}
+
+/* Animação de flutuação */
+@keyframes float-github {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.github-float:hover {
+  background: #00bfff;
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: 0 0 18px rgba(0, 191, 255, 0.8);
+}

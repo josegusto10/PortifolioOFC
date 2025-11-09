@@ -1,0 +1,392 @@
+/* ======= ESTILOS GERAIS ======= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR (geral para todas as páginas) */
+nav {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 25px;
+  padding: 8px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #001122;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+/* ======= ESTILOS DA PÁGINA INICIAL ======= */
+body.home-page {
+  background-color: #001122;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page .hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+
+.home-page .hero div span {
+  text-align: end;
+}
+
+.home-page .name {
+  font-family: 'Anton', sans-serif;
+  font-size: 8rem;
+  line-height: 1;
+  margin: 0;
+  display: flex;
+}
+
+.home-page .portfolio {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  margin: 10px 0;
+  color: white;
+}
+
+/* ======= ESTILOS DA PÁGINA SOBRE ======= */
+body.about-page {
+  background-color: #000000;
+  font-family: Georgia, serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-page .container {
+  display: flex;
+  max-width: 1200px;
+  width: 90%;
+  height: auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-page .photo {
+  flex: 0 0 40%;
+  height: auto;
+}
+
+.about-page .photo img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(0%);
+  border-radius: 10px;
+}
+
+.about-page .window {
+  flex: 1;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  border: 1px solid #00aaff;
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.about-page .window-bar {
+  background-color: #2a2a2a;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.about-page .window-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.about-page .button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.about-page .red { background-color: #ff5f57; }
+.about-page .yellow { background-color: #ffbd2e; }
+.about-page .green { background-color: #28ca42; }
+
+.about-page .content {
+  padding: 30px;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.about-page .content p {
+  margin: 0 0 20px 0;
+}
+
+.about-page .content p:last-child {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    padding: 8px 15px;
+  }
+
+  nav li {
+    margin: 0 10px;
+  }
+
+  .home-page .hero {
+    padding-left: 5%;
+  }
+
+  .home-page .name {
+    font-size: 3rem;
+  }
+
+  .home-page .portfolio {
+    font-size: 1.2rem;
+  }
+
+  .about-page .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-page .photo,
+  .about-page .window {
+    width: 100%;
+  }
+}
+
+/* ======= ESTILO ESPECÍFICO - PÁGINA DESING ======= */
+
+body.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0d1117, #000814);
+  font-family: 'Fira Code', monospace;
+  color: #c9d1d9;
+  overflow: hidden;
+}
+
+.code-container {
+  background: rgba(22, 27, 34, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  padding: 30px 40px;
+  width: 700px;
+  max-width: 90%;
+  text-align: left;
+  animation: fadeIn 1s ease;
+}
+
+/* Nome do arquivo */
+.file-name {
+  color: #58a6ff;
+  margin-bottom: 18px;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px rgba(88, 166, 255, 0.6);
+}
+
+
+.text {
+  color: #c9d1d9;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #58a6ff;
+  animation: blink 0.7s infinite;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+}
+
+/* Animações */
+@keyframes blink {
+  0%, 50%, 100% { border-color: #58a6ff; }
+  25%, 75% { border-color: transparent; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======= ESTILO MINIMALISTA AZUL NEON ======= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.contato {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.container.contato {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #00bfff;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
+
+/* Campos do formulário */
+.form-group {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.4);
+  outline: none;
+}
+
+/* Validação de e-mail */
+input#email.valid {
+  border-color: #00ff80;
+}
+input#email.invalid {
+  border-color: #ff4040;
+}
+
+/* Botão */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #00bfff;
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0095cc;
+  transform: translateY(-2px);
+}
+
+/* Rodapé */
+footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #00bfff;
+  opacity: 0.8;
+}
+
+footer p {
+  margin: 3px 0;
+}
+
+/* ===== ÍCONE FLUTUANTE DO GITHUB ===== */
+
+.github-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(0, 191, 255, 0.1);
+  border: 1px solid rgba(0, 191, 255, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00bfff;
+  font-size: 1.8rem;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: float-github 4s ease-in-out infinite;
+}
+
+/* Animação de flutuação */
+@keyframes float-github {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.github-float:hover {
+  background: #00bfff;
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: 0 0 18px rgba(0, 191, 255, 0.8);
+}
