@@ -390,3 +390,31 @@ footer p {
   transform: scale(1.1);
   box-shadow: 0 0 18px rgba(0, 191, 255, 0.8);
 }
+
+
+/* ======= MEDIA QUERY PARA TELAS ATÉ 380PX ======= */
+@media (max-width: 380px) {
+  nav {
+    padding: 8px 12px;
+  }
+
+  nav li {
+    margin: 0 8px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .home-page .hero {
+    padding-left: 5%;
+  }
+
+  .home-page .name {
+    font-size: 4rem;
+  }
+
+  .home-page .portfolio {
+    font-size: 1.4rem;
+  }
+
